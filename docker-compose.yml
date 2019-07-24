@@ -7,6 +7,8 @@ services:
     image: "openmaptiles/postgis:2.9"
     volumes:
     - pgdata:/var/lib/postgresql/data
+    - ./custom_configs/postgresql.conf:/etc/postgresql.conf
+    command: postgres -c 'config_file=/etc/postgresql.conf'
     networks:
     - postgres_conn
     ports:
@@ -100,6 +102,7 @@ services:
     - postgres_conn
     env_file: .env
   generate-vectortiles:
+    #https://github.com/openmaptiles/generate-vectortiles/blob/master/export-local.sh
     image: "openmaptiles/generate-vectortiles:0.1.1"
     volumes:
     - ./data:/export
@@ -113,6 +116,7 @@ services:
       BBOX: ${BBOX}
       MIN_ZOOM: ${MIN_ZOOM}
       MAX_ZOOM: ${MAX_ZOOM}
+      COPY_CONCURRENCY: ${COPY_CONCURRENCY}
   postserve:
     image: "openmaptiles/postserve:0.2"
     env_file: .env
