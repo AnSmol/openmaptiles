@@ -4,6 +4,7 @@ tileset:
     - layers/waterway/waterway.yaml
     - layers/landcover/landcover.yaml
     - layers/landuse/landuse.yaml
+    - layers/mountain_peak/mountain_peak.yaml    
     - layers/park/park.yaml
     - layers/boundary/boundary.yaml
     - layers/aeroway/aeroway.yaml
@@ -12,6 +13,7 @@ tileset:
     - layers/water_name/water_name.yaml
     - layers/transportation_name/transportation_name.yaml
     - layers/place/place.yaml
+    - layers/housenumber/housenumber.yaml 
     - layers/aerodrome_label/aerodrome_label.yaml
   name: OpenMapTiles
   version: 3.3.0
@@ -24,23 +26,13 @@ tileset:
   minzoom: 0
   pixel_scale: 256
   languages:
-    - br # Breton, Latin
-    - ca # Catalan, Latin
-    - co # Corsican, Latin
-    - cs # Czech, Latin
-    - de # German, Latin
     - en # English, Latin
-    - eo # Esperanto, Latin
-    - es # Spanish, Latin
-    - eu # Basque, Latin
-    - fr # French, Latin
-    - it # Italian, Latin
     - la # Latin, Latin
-    - nl # Dutch, Latin
-    - oc # Occitan (post 1500), Latin
-    - pl # Polish, Latin
-    - pt # Portuguese, Latin
     - ru # Russian
+    - kk # Kazakh
+    - be # Belarusian
+
+
   defaults:
     srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
     datasource:
