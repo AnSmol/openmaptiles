@@ -115,7 +115,8 @@ start-tileserver:
 	@echo "* "
 	@echo "***********************************************************"
 	@echo " "
-	docker run -it --rm --name tileserver-gl -v $(pwd)/data:/data -p 8080:80 klokantech/tileserver-gl
+#	docker run -it --rm --name tileserver-gl -v $(pwd)/data:/data -p 8080:80 klokantech/tileserver-gl
+	docker run -d --name tileserver-gl  --restart unless-stopped -v $(pwd)/data:/data -v $(pwd)/custom_configs/tileserver_styles:/usr/src/app/node_modules/tileserver-gl-styles/styles -p 8080:80 klokantech/tileserver-gl
 
 start-postserve:
 	@echo " "
