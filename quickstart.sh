@@ -269,8 +269,8 @@ echo "      :  "
 echo "      : You will see a lot of deprecated warning in the log! This is normal!  "
 echo "      :    like :  Mapnik LOG>  ... is deprecated and will be removed in Mapnik 4.x ... "
 
-#docker-compose -f docker-compose.yml -f ./data/docker-compose-config.yml  run --rm generate-vectortiles
-docker-compose -f docker-compose.yml  run --rm generate-vectortiles
+docker-compose -f docker-compose.yml -f ./data/docker-compose-config.yml  run --rm generate-vectortiles
+#docker-compose -f docker-compose.yml  run --rm generate-vectortiles
 
 echo " "
 echo "-------------------------------------------------------------------------------------"
