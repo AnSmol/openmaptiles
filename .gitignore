@@ -16,3 +16,6 @@ wikidata/*
 
 # generated source files
 build/*
+
+# updates files
+updates/extracts_*

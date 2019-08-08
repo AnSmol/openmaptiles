@@ -93,7 +93,9 @@ services:
      - .:/tileset
      - ./build:/sql
   generate-changed-vectortiles:
-    image: "openmaptiles/generate-vectortiles:0.1.1"
+    #Have to create separate docker image with new packages and nodejs
+    #https://github.com/openmaptiles/openmaptiles/issues/317
+    build: ./generate-changed-vectortiles
     command: ./export-list.sh
     volumes:
     - ./data:/export
